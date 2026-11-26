@@ -1,0 +1,16 @@
+question,cache_status,similarity,latency_seconds
+What is Docker?,MISS,,1.263168
+Explain Docker containers.,HIT,0.6285,0.221564
+How does Docker work?,HIT,0.82,0.234208
+What is Kubernetes?,MISS,,1.271115
+Explain Kubernetes orchestration.,HIT,0.5626,0.218994
+How does Kubernetes manage containers?,HIT,0.6562,0.191493
+What is Terraform?,MISS,,1.243609
+Explain the purpose of Terraform.,HIT,0.8125,0.248841
+How does Terraform manage infrastructure?,HIT,0.7017,0.20895
+What is AWS?,MISS,,1.232634
+Explain cloud computing with AWS.,MISS,,1.240708
+What services does AWS provide?,HIT,0.7777,0.211164
+What is Python?,MISS,,1.233213
+Explain the Python programming language.,HIT,0.7217,0.229359
+What is Python used for?,HIT,0.827,0.213888

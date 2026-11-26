@@ -1,0 +1,76 @@
+trial,question,cache_status,similarity,latency_seconds
+1,What is Docker?,MISS,,1.236063
+1,Explain Docker containers.,HIT,0.6285,0.241856
+1,How does Docker work?,HIT,0.82,0.196508
+1,What is Kubernetes?,MISS,,1.2686
+1,Explain Kubernetes orchestration.,HIT,0.5626,0.232263
+1,How does Kubernetes manage containers?,HIT,0.6562,0.239415
+1,What is Terraform?,MISS,,1.29021
+1,Explain the purpose of Terraform.,HIT,0.8125,0.204002
+1,How does Terraform manage infrastructure?,HIT,0.7017,0.240999
+1,What is AWS?,MISS,,1.228419
+1,Explain cloud computing with AWS.,MISS,,1.281779
+1,What services does AWS provide?,HIT,0.7777,0.233957
+1,What is Python?,MISS,,1.240318
+1,Explain the Python programming language.,HIT,0.7217,0.205738
+1,What is Python used for?,HIT,0.827,0.208908
+2,What is Docker?,MISS,,1.292506
+2,Explain Docker containers.,HIT,0.6285,0.224644
+2,How does Docker work?,HIT,0.82,0.233864
+2,What is Kubernetes?,MISS,,1.284487
+2,Explain Kubernetes orchestration.,HIT,0.5626,0.271884
+2,How does Kubernetes manage containers?,HIT,0.6562,0.270357
+2,What is Terraform?,MISS,,1.301977
+2,Explain the purpose of Terraform.,HIT,0.8125,0.296938
+2,How does Terraform manage infrastructure?,HIT,0.7017,0.281517
+2,What is AWS?,MISS,,1.237236
+2,Explain cloud computing with AWS.,MISS,,1.248971
+2,What services does AWS provide?,HIT,0.7777,0.262731
+2,What is Python?,MISS,,1.2709
+2,Explain the Python programming language.,HIT,0.7217,0.213395
+2,What is Python used for?,HIT,0.827,0.282732
+3,What is Docker?,MISS,,1.233217
+3,Explain Docker containers.,HIT,0.6285,0.301929
+3,How does Docker work?,HIT,0.82,0.296072
+3,What is Kubernetes?,MISS,,1.326193
+3,Explain Kubernetes orchestration.,HIT,0.5626,0.29975
+3,How does Kubernetes manage containers?,HIT,0.6562,0.300326
+3,What is Terraform?,MISS,,1.291147
+3,Explain the purpose of Terraform.,HIT,0.8125,0.235975
+3,How does Terraform manage infrastructure?,HIT,0.7017,0.224819
+3,What is AWS?,MISS,,1.270677
+3,Explain cloud computing with AWS.,MISS,,1.307241
+3,What services does AWS provide?,HIT,0.7777,0.221627
+3,What is Python?,MISS,,1.248395
+3,Explain the Python programming language.,HIT,0.7217,0.221868
+3,What is Python used for?,HIT,0.827,0.225213
+4,What is Docker?,MISS,,1.233469
+4,Explain Docker containers.,HIT,0.6285,0.221538
+4,How does Docker work?,HIT,0.82,0.296238
+4,What is Kubernetes?,MISS,,1.256695
+4,Explain Kubernetes orchestration.,HIT,0.5626,0.24539
+4,How does Kubernetes manage containers?,HIT,0.6562,0.233327
+4,What is Terraform?,MISS,,1.226965
+4,Explain the purpose of Terraform.,HIT,0.8125,0.242109
+4,How does Terraform manage infrastructure?,HIT,0.7017,0.208337
+4,What is AWS?,MISS,,1.310275
+4,Explain cloud computing with AWS.,MISS,,1.266355
+4,What services does AWS provide?,HIT,0.7777,0.200531
+4,What is Python?,MISS,,1.253232
+4,Explain the Python programming language.,HIT,0.7217,0.24293
+4,What is Python used for?,HIT,0.827,0.262609
+5,What is Docker?,MISS,,1.209448
+5,Explain Docker containers.,HIT,0.6285,0.254328
+5,How does Docker work?,HIT,0.82,0.242846
+5,What is Kubernetes?,MISS,,1.241735
+5,Explain Kubernetes orchestration.,HIT,0.5626,0.277519
+5,How does Kubernetes manage containers?,HIT,0.6562,0.204313
+5,What is Terraform?,MISS,,1.252336
+5,Explain the purpose of Terraform.,HIT,0.8125,0.247826
+5,How does Terraform manage infrastructure?,HIT,0.7017,0.216759
+5,What is AWS?,MISS,,1.242287
+5,Explain cloud computing with AWS.,MISS,,1.256089
+5,What services does AWS provide?,HIT,0.7777,0.249358
+5,What is Python?,MISS,,1.252373
+5,Explain the Python programming language.,HIT,0.7217,0.263298
+5,What is Python used for?,HIT,0.827,0.23006

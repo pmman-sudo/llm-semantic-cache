@@ -1,0 +1,63 @@
+{
+    "trials": 5,
+    "workload_size_per_trial": 15,
+    "total_requests_across_trials": 75,
+    "simulated_llm_latency_seconds": 1.0,
+    "assumed_cost_per_llm_call": 0.002,
+    "baseline": {
+        "average_total_latency_seconds": 15.0144,
+        "median_total_latency_seconds": 15.0077,
+        "average_latency_per_request_seconds": 1.001,
+        "llm_calls_per_trial": 15
+    },
+    "semantic_cache": {
+        "average_total_latency_seconds": 9.7736,
+        "median_total_latency_seconds": 9.7,
+        "average_latency_per_request_seconds": 0.6516,
+        "average_llm_calls_per_trial": 6,
+        "average_cache_hits_per_trial": 9,
+        "average_cache_misses_per_trial": 6,
+        "average_hit_rate_percent": 60.0,
+        "average_estimated_cost_saved": 0.018
+    },
+    "average_time_saved_seconds": 5.2407,
+    "average_latency_improvement_percent": 34.9,
+    "individual_trials": [
+        {
+            "trial": 1,
+            "baseline_total_latency_seconds": 15.041,
+            "cached_total_latency_seconds": 9.549,
+            "cache_hits": 9,
+            "cache_misses": 6
+        },
+        {
+            "trial": 2,
+            "baseline_total_latency_seconds": 15.0074,
+            "cached_total_latency_seconds": 9.9741,
+            "cache_hits": 9,
+            "cache_misses": 6
+        },
+        {
+            "trial": 3,
+            "baseline_total_latency_seconds": 15.0068,
+            "cached_total_latency_seconds": 10.0044,
+            "cache_hits": 9,
+            "cache_misses": 6
+        },
+        {
+            "trial": 4,
+            "baseline_total_latency_seconds": 15.0077,
+            "cached_total_latency_seconds": 9.7,
+            "cache_hits": 9,
+            "cache_misses": 6
+        },
+        {
+            "trial": 5,
+            "baseline_total_latency_seconds": 15.0089,
+            "cached_total_latency_seconds": 9.6406,
+            "cache_hits": 9,
+            "cache_misses": 6
+        }
+    ],
+    "methodology_note": "The LLM is simulated. Embedding warm-up is excluded from measured cached request latency. Each trial uses a fresh empty cache. Results are from a small synthetic workload and are not production performance guarantees."
+}
