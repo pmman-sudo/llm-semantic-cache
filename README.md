@@ -4,6 +4,10 @@ A lightweight semantic caching system that reduces repeated Large Language Model
 
 The project combines ONNX-based text embeddings, FAISS vector similarity search, and SQLite persistence to demonstrate how semantic caching can reduce unnecessary LLM calls, response latency, and estimated API costs.
 
+> **Project scope:** This is an experimental prototype demonstrating semantic caching, vector similarity search, persistent storage, and benchmark evaluation. It is not a production-ready LLM caching service.
+
+> **Important:** The current response generator is `MockLLM`, a simulated LLM. Performance and cost results are illustrative and are not measurements of a live LLM provider.
+
 ## Project Overview
 
 Traditional caching relies on exact matches. However, users can ask the same question in different ways.
@@ -68,16 +72,20 @@ A semantic cache converts questions into numerical embeddings and compares their
 
 ## Technology Stack
 
-| Technology | Purpose |
-|---|---|
-| Python | Core application |
-| ONNX Runtime | Embedding inference |
-| GPTCache ONNX embedding integration | Text embedding generation |
-| FAISS | Vector similarity search |
-| SQLite | Persistent cache storage |
-| NumPy | Numerical operations |
-| Matplotlib | Benchmark visualizations |
-| Pytest | Automated testing |
+| Technology | Version | Purpose |
+|---|---:|---|
+| Python | 3.14.7 | Core application |
+| GPTCache | 0.1.44 | ONNX embedding integration |
+| ONNX Runtime | 1.32.0 | Embedding inference |
+| FAISS CPU | 1.16.0 | Vector similarity search |
+| SQLite | Built-in | Persistent cache storage |
+| NumPy | 2.5.5 | Numerical operations |
+| Transformers | 4.57.3 | Model and tokenizer utilities |
+| Hugging Face Hub | 0.36.0 | Model repository access |
+| Matplotlib | 3.11.2 | Benchmark visualizations |
+| Pytest | 9.2.0 | Automated testing |
+
+**GPTCache maintenance:** GPTCache is an open-source semantic caching library maintained by Zilliz. Its GitHub repository shows continued development, although published package releases have lagged behind repository activity. This project pins GPTCache to version 0.1.44 for reproducibility.
 
 ## Project Structure
 
@@ -98,6 +106,7 @@ llm-semantic-cache/
 |   |-- __init__.py
 |   |-- benchmark.py
 |   |-- evaluate_thresholds.py
+|   |-- latency_sensitivity.py
 |   \-- workload.json
 |-- data/
 |   \-- cache.db
@@ -108,6 +117,10 @@ llm-semantic-cache/
 |   |-- cache_performance.png
 |   |-- threshold_evaluation.csv
 |   |-- threshold_evaluation.json
+|   |-- latency_sensitivity.csv
+|   |-- latency_sensitivity.json
+|   |-- latency_sensitivity.png
+|   |-- latency_improvement.png
 |   \-- previous_experiments/
 |-- .gitignore
 |-- requirements.txt
@@ -134,15 +147,37 @@ python -m venv venv
 
 ### 3. Activate the environment
 
+**Windows PowerShell:**
+
 ```powershell
 .\venv\Scripts\Activate.ps1
 ```
+
+**Windows Command Prompt:**
+
+```cmd
+venv\Scripts\activate.bat
+```
+
+**Linux and macOS:**
+
+```bash
+source venv/bin/activate
+```
+
+If PowerShell blocks script execution, run:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+Then activate the environment again.
 
 ### 4. Install dependencies
 
 ```powershell
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 The embedding integration may download its ONNX model during initial setup or first use. Internet access may be required for this initial model download.
@@ -249,6 +284,59 @@ In an earlier experiment using a simulated LLM delay of 0.1 seconds, caching inc
 This illustrates an important engineering consideration: semantic caching is not automatically faster for every workload. Its effectiveness depends on factors such as LLM response latency, embedding overhead, cache hit rate, and workload characteristics.
 
 The estimated cost savings are based on an assumed cost per request, not actual provider billing.
+
+
+### Latency Sensitivity Evaluation
+
+To understand how the simulated LLM response time affects cache performance, an additional experiment tests five latency settings.
+
+Run the experiment with:
+
+```powershell
+python -m benchmarks.latency_sensitivity
+```
+
+**Methodology:**
+
+- 15 questions per trial.
+- Five independent trials at each latency setting.
+- Simulated LLM delays of 0.1, 0.5, 1, 2 and 5 seconds.
+- Similarity threshold of 0.55.
+- Fresh SQLite cache for every trial.
+- Embedding-model warm-up excluded from measurements.
+- Simulated LLM cost assumption of $0.002 per call.
+
+**Results:**
+
+| Simulated LLM delay | Baseline (s) | Cached (s) | Latency improvement |
+|---:|---:|---:|---:|
+| 0.1 s | 1.5081 | 4.7171 | -212.79% |
+| 0.5 s | 7.5085 | 7.1103 | 5.30% |
+| 1.0 s | 15.0087 | 10.1842 | 32.14% |
+| 2.0 s | 30.0071 | 15.8737 | 47.10% |
+| 5.0 s | 75.0084 | 34.0093 | 54.66% |
+
+The cache maintained a 60% hit rate across all five settings, with nine cache hits and six LLM calls per trial. Estimated cost savings were $0.018 per trial.
+
+**Visualizations:**
+
+![Baseline versus cached execution time](reports/latency_sensitivity.png)
+
+![Latency improvement across simulated delays](reports/latency_improvement.png)
+
+**Interpretation:**
+
+Semantic caching introduced substantial overhead when simulated LLM latency was only 0.1 seconds. At 0.5 seconds, the improvement was marginal. The benefit increased as simulated LLM latency increased, reaching 54.66% at five seconds.
+
+These results illustrate the trade-off between embedding and retrieval overhead and the cost of generating a new response. They are controlled measurements using MockLLM, not production performance guarantees.
+
+Detailed results are available in:
+
+- `reports/latency_sensitivity.csv`
+- `reports/latency_sensitivity.json`
+- `reports/latency_sensitivity.png`
+- `reports/latency_improvement.png`
+
 
 ## Threshold Evaluation
 

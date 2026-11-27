@@ -352,6 +352,46 @@ This demonstrates that the effectiveness of semantic caching depends on workload
 The benchmark results are encouraging, but they should be interpreted as controlled prototype measurements rather than production performance guarantees.
 
 
+### 9.1 Latency Sensitivity Analysis
+
+A further experiment was conducted to evaluate how different simulated LLM response times influence the performance of the semantic cache.
+
+Five simulated latency settings were evaluated: 0.1, 0.5, 1, 2 and 5 seconds. Each setting used 15 questions and five independent trials. A fresh SQLite database was created for each cached trial, and embedding-model warm-up was excluded from the measurements.
+
+The similarity threshold remained fixed at 0.55.
+
+**Experimental Results**
+
+| Simulated LLM latency | Baseline average (s) | Cached average (s) | Improvement |
+|---:|---:|---:|---:|
+| 0.1 s | 1.5081 | 4.7171 | -212.79% |
+| 0.5 s | 7.5085 | 7.1103 | 5.30% |
+| 1.0 s | 15.0087 | 10.1842 | 32.14% |
+| 2.0 s | 30.0071 | 15.8737 | 47.10% |
+| 5.0 s | 75.0084 | 34.0093 | 54.66% |
+
+The cache achieved a consistent 60% hit rate, corresponding to nine cache hits and six simulated LLM calls per trial. Based on the assumed cost of $0.002 per LLM call, estimated savings were $0.018 per trial.
+
+**Performance Interpretation**
+
+At 0.1 seconds of simulated LLM latency, the cached implementation was slower because embedding generation, similarity search and storage operations outweighed the time saved by avoiding LLM calls.
+
+At 0.5 seconds, caching produced a modest improvement of 5.30%. At higher simulated response times, the relative benefit increased, reaching 54.66% at five seconds.
+
+The findings demonstrate that semantic caching is most beneficial when the latency avoided through cache hits is greater than the overhead introduced by embedding generation and cache operations.
+
+**Experimental Limitations**
+
+The results were obtained using a simulated response generator rather than a live LLM provider. They represent controlled local measurements and should not be interpreted as production performance guarantees. Actual results may vary with model response times, workload composition, embedding infrastructure, cache hit rate and deployment environment.
+
+The experiment outputs are stored in:
+
+- `reports/latency_sensitivity.csv`
+- `reports/latency_sensitivity.json`
+- `reports/latency_sensitivity.png`
+- `reports/latency_improvement.png`
+
+
 
 ## 10. Challenges Encountered
 
