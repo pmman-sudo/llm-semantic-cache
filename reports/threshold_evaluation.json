@@ -1,0 +1,112 @@
+[
+    {
+        "threshold": 0.4,
+        "queries": 40,
+        "correct_hits": 17,
+        "incorrect_hits": 8,
+        "misses": 15,
+        "precision": 0.68,
+        "incorrect_hit_rate": 0.32,
+        "coverage": 0.625
+    },
+    {
+        "threshold": 0.45,
+        "queries": 40,
+        "correct_hits": 15,
+        "incorrect_hits": 5,
+        "misses": 20,
+        "precision": 0.75,
+        "incorrect_hit_rate": 0.25,
+        "coverage": 0.5
+    },
+    {
+        "threshold": 0.5,
+        "queries": 40,
+        "correct_hits": 11,
+        "incorrect_hits": 2,
+        "misses": 27,
+        "precision": 0.8462,
+        "incorrect_hit_rate": 0.1538,
+        "coverage": 0.325
+    },
+    {
+        "threshold": 0.55,
+        "queries": 40,
+        "correct_hits": 11,
+        "incorrect_hits": 1,
+        "misses": 28,
+        "precision": 0.9167,
+        "incorrect_hit_rate": 0.0833,
+        "coverage": 0.3
+    },
+    {
+        "threshold": 0.6,
+        "queries": 40,
+        "correct_hits": 10,
+        "incorrect_hits": 1,
+        "misses": 29,
+        "precision": 0.9091,
+        "incorrect_hit_rate": 0.0909,
+        "coverage": 0.275
+    },
+    {
+        "threshold": 0.65,
+        "queries": 40,
+        "correct_hits": 6,
+        "incorrect_hits": 1,
+        "misses": 33,
+        "precision": 0.8571,
+        "incorrect_hit_rate": 0.1429,
+        "coverage": 0.175
+    },
+    {
+        "threshold": 0.7,
+        "queries": 40,
+        "correct_hits": 5,
+        "incorrect_hits": 1,
+        "misses": 34,
+        "precision": 0.8333,
+        "incorrect_hit_rate": 0.1667,
+        "coverage": 0.15
+    },
+    {
+        "threshold": 0.75,
+        "queries": 40,
+        "correct_hits": 4,
+        "incorrect_hits": 1,
+        "misses": 35,
+        "precision": 0.8,
+        "incorrect_hit_rate": 0.2,
+        "coverage": 0.125
+    },
+    {
+        "threshold": 0.8,
+        "queries": 40,
+        "correct_hits": 3,
+        "incorrect_hits": 1,
+        "misses": 36,
+        "precision": 0.75,
+        "incorrect_hit_rate": 0.25,
+        "coverage": 0.1
+    },
+    {
+        "threshold": 0.85,
+        "queries": 40,
+        "correct_hits": 3,
+        "incorrect_hits": 1,
+        "misses": 36,
+        "precision": 0.75,
+        "incorrect_hit_rate": 0.25,
+        "coverage": 0.1
+    },
+    {
+        "threshold": 0.9,
+        "queries": 40,
+        "correct_hits": 1,
+        "incorrect_hits": 0,
+        "misses": 39,
+        "precision": 1.0,
+        "incorrect_hit_rate": 0.0,
+        "coverage": 0.025
+    }
+]
