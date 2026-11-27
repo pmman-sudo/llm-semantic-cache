@@ -1,0 +1,250 @@
+{
+    "methodology": {
+        "workload_size": 15,
+        "trials_per_latency": 5,
+        "latency_values_seconds": [
+            0.1,
+            0.5,
+            1.0,
+            2.0,
+            5.0
+        ],
+        "cache_threshold": 0.55,
+        "cost_per_llm_call": 0.002,
+        "embedding_warmup_excluded": true,
+        "fresh_cache_per_trial": true,
+        "mock_llm": true
+    },
+    "results": [
+        {
+            "simulated_llm_latency_seconds": 0.1,
+            "trials": 5,
+            "questions_per_trial": 15,
+            "baseline_average_total_seconds": 1.5081,
+            "baseline_median_total_seconds": 1.5072,
+            "cached_average_total_seconds": 4.7171,
+            "cached_median_total_seconds": 4.4996,
+            "average_latency_improvement_percent": -212.79,
+            "average_cache_hits": 9,
+            "average_cache_hit_rate_percent": 60.0,
+            "average_llm_calls": 6,
+            "average_estimated_cost_saved": 0.018,
+            "individual_trials": [
+                {
+                    "trial": 1,
+                    "baseline_seconds": 1.5093,
+                    "cached_seconds": 4.4728,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 2,
+                    "baseline_seconds": 1.5072,
+                    "cached_seconds": 4.4378,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 3,
+                    "baseline_seconds": 1.5072,
+                    "cached_seconds": 4.4996,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 4,
+                    "baseline_seconds": 1.5062,
+                    "cached_seconds": 5.2868,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 5,
+                    "baseline_seconds": 1.5104,
+                    "cached_seconds": 4.8884,
+                    "cache_hits": 9
+                }
+            ]
+        },
+        {
+            "simulated_llm_latency_seconds": 0.5,
+            "trials": 5,
+            "questions_per_trial": 15,
+            "baseline_average_total_seconds": 7.5085,
+            "baseline_median_total_seconds": 7.5087,
+            "cached_average_total_seconds": 7.1103,
+            "cached_median_total_seconds": 7.1799,
+            "average_latency_improvement_percent": 5.3,
+            "average_cache_hits": 9,
+            "average_cache_hit_rate_percent": 60.0,
+            "average_llm_calls": 6,
+            "average_estimated_cost_saved": 0.018,
+            "individual_trials": [
+                {
+                    "trial": 1,
+                    "baseline_seconds": 7.5098,
+                    "cached_seconds": 7.2633,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 2,
+                    "baseline_seconds": 7.5089,
+                    "cached_seconds": 6.7021,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 3,
+                    "baseline_seconds": 7.5078,
+                    "cached_seconds": 6.9515,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 4,
+                    "baseline_seconds": 7.5072,
+                    "cached_seconds": 7.4548,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 5,
+                    "baseline_seconds": 7.5087,
+                    "cached_seconds": 7.1799,
+                    "cache_hits": 9
+                }
+            ]
+        },
+        {
+            "simulated_llm_latency_seconds": 1.0,
+            "trials": 5,
+            "questions_per_trial": 15,
+            "baseline_average_total_seconds": 15.0087,
+            "baseline_median_total_seconds": 15.0088,
+            "cached_average_total_seconds": 10.1842,
+            "cached_median_total_seconds": 10.2028,
+            "average_latency_improvement_percent": 32.14,
+            "average_cache_hits": 9,
+            "average_cache_hit_rate_percent": 60.0,
+            "average_llm_calls": 6,
+            "average_estimated_cost_saved": 0.018,
+            "individual_trials": [
+                {
+                    "trial": 1,
+                    "baseline_seconds": 15.011,
+                    "cached_seconds": 10.0497,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 2,
+                    "baseline_seconds": 15.0088,
+                    "cached_seconds": 10.1796,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 3,
+                    "baseline_seconds": 15.0078,
+                    "cached_seconds": 10.2165,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 4,
+                    "baseline_seconds": 15.0068,
+                    "cached_seconds": 10.2724,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 5,
+                    "baseline_seconds": 15.009,
+                    "cached_seconds": 10.2028,
+                    "cache_hits": 9
+                }
+            ]
+        },
+        {
+            "simulated_llm_latency_seconds": 2.0,
+            "trials": 5,
+            "questions_per_trial": 15,
+            "baseline_average_total_seconds": 30.0071,
+            "baseline_median_total_seconds": 30.0071,
+            "cached_average_total_seconds": 15.8737,
+            "cached_median_total_seconds": 15.9295,
+            "average_latency_improvement_percent": 47.1,
+            "average_cache_hits": 9,
+            "average_cache_hit_rate_percent": 60.0,
+            "average_llm_calls": 6,
+            "average_estimated_cost_saved": 0.018,
+            "individual_trials": [
+                {
+                    "trial": 1,
+                    "baseline_seconds": 30.0076,
+                    "cached_seconds": 15.9295,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 2,
+                    "baseline_seconds": 30.0064,
+                    "cached_seconds": 16.0258,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 3,
+                    "baseline_seconds": 30.006,
+                    "cached_seconds": 15.5514,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 4,
+                    "baseline_seconds": 30.0071,
+                    "cached_seconds": 15.8762,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 5,
+                    "baseline_seconds": 30.0085,
+                    "cached_seconds": 15.9855,
+                    "cache_hits": 9
+                }
+            ]
+        },
+        {
+            "simulated_llm_latency_seconds": 5.0,
+            "trials": 5,
+            "questions_per_trial": 15,
+            "baseline_average_total_seconds": 75.0084,
+            "baseline_median_total_seconds": 75.0082,
+            "cached_average_total_seconds": 34.0093,
+            "cached_median_total_seconds": 34.1296,
+            "average_latency_improvement_percent": 54.66,
+            "average_cache_hits": 9,
+            "average_cache_hit_rate_percent": 60.0,
+            "average_llm_calls": 6,
+            "average_estimated_cost_saved": 0.018,
+            "individual_trials": [
+                {
+                    "trial": 1,
+                    "baseline_seconds": 75.0072,
+                    "cached_seconds": 34.1978,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 2,
+                    "baseline_seconds": 75.0075,
+                    "cached_seconds": 34.2444,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 3,
+                    "baseline_seconds": 75.0082,
+                    "cached_seconds": 33.5323,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 4,
+                    "baseline_seconds": 75.0083,
+                    "cached_seconds": 34.1296,
+                    "cache_hits": 9
+                },
+                {
+                    "trial": 5,
+                    "baseline_seconds": 75.0106,
+                    "cached_seconds": 33.9423,
+                    "cache_hits": 9
+                }
+            ]
+        }
+    ]
+}

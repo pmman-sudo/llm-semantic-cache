@@ -1,0 +1,6 @@
+simulated_llm_latency_seconds,baseline_average_total_seconds,cached_average_total_seconds,average_latency_improvement_percent,average_cache_hits,average_cache_hit_rate_percent,average_llm_calls,average_estimated_cost_saved
+0.1,1.5081,4.7171,-212.79,9,60.0,6,0.018
+0.5,7.5085,7.1103,5.3,9,60.0,6,0.018
+1.0,15.0087,10.1842,32.14,9,60.0,6,0.018
+2.0,30.0071,15.8737,47.1,9,60.0,6,0.018
+5.0,75.0084,34.0093,54.66,9,60.0,6,0.018
